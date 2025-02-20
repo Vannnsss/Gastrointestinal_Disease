@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Prediksi</title>
+    <link rel="stylesheet" href="/static/css/stylehistory.css">
+</head>
+<body>
+    <h1>Riwayat Prediksi</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Tanggal dan Waktu</th>
+                <th>Nama Pasien</th>
+                <th>Umur</th>
+                <th>Jenis Kelamin</th>
+                <th>Kontak</th>
+                <th>Alamat</th>
+                <th>Kategori Prediksi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prediction, patient in predictions %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ prediction.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ patient.name if patient else 'Tidak ada data pasien' }}</td>
+                <td>{{ patient.age if patient else '-' }}</td>
+                <td>{{ patient.gender if patient else '-' }}</td>
+                <td>{{ patient.contact if patient else '-' }}</td>
+                <td>{{ patient.address if patient else '-' }}</td>
+                <td>{{ prediction.predicted_class }}</td>
+                <td>
+                    <button><a href="{{ url_for('detect') }}">Deteksi Baru</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}#history">
+        Kembali ke Dashboard
+    </a>
+    <footer>
+        <p>&copy; 2025 Sistem Prediksi Penyakit. All rights reserved.</p>
+    </footer>
+</body>
+</html>

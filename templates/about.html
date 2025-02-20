@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Tentang Web</title>
+    <link rel="stylesheet" href="/static/css/styleweb.css">
+</head>
+<body>
+    <header>
+        <h1>About System</h1>
+    </header>
+    <section>
+        <div class="download-pdf">
+            <h2>Tata Cara Penggunaan Web</h2>
+            <p>Anda dapat mengunduh panduan penggunaan aplikasi ini dalam format PDF.</p>
+            <a href="/static/files/Cara pakai web ini.pdf" download="Tata Cara Penggunaan Web.pdf" class="btn-download">
+                Unduh PDF
+            </a>
+        </div>
+
+        <h2>Model yang digunakan</h2>
+        <ul>
+            <li>Website ini menggunakan dua model deep learning utama, yaitu ConvMixer dan ResNet, untuk melakukan klasifikasi dan deteksi penyakit gastrointestinal berbasis citra digital.</li>
+        </ul>
+
+        <br>
+
+        <h2>Teknologi yang digunakan</h2>
+        <ul>
+            <li>Frontend: <br>
+                -HTML5, CSS3, dan JavaScript. <br>
+                -Framework Bootstrap dan FullPage.js untuk desain interaktif dan navigasi. <br>
+
+                Backend: <br>
+                -Flask sebagai framework backend untuk menangani request dan routing. <br>
+                -Python untuk pengolahan data dan pengelolaan model machine learning. <br>
+
+                Model Deployment: <br>
+                -Framework TensorFlow dan Keras untuk integrasi model machine learning ke dalam sistem. <br>
+                
+        </ul>
+
+        <br>
+
+        <h2>Jenis Penyakit yang dideteksi</h2>
+        <ul>
+            <li>Sistem ini mampu mendeteksi beberapa jenis penyakit gastrointestinal seperti: <br>
+                -Esophagitis. <br>
+                -Ulcerative Colitis. <br>
+                -Polyps. <br>
+                -Dan penyakit gastrointestinal lainnya sesuai dengan dataset Kvasir. <br>
+
+                Fitur Website <br>
+                Prediksi Penyakit: <br>
+                Pengguna dapat mengunggah gambar medis (format JPG) untuk dianalisis. <br>
+                Model ConvMixer akan memberikan hasil diagnosis secara cepat. <br>
+
+        </ul>
+    </section>
+    <a href="{{ url_for('index') }}#about">
+        Kembali ke Dashboard
+    </a>
+    <footer>
+        <p>&copy; 2025 Sistem Prediksi Penyakit. All rights reserved.</p>
+    </footer>
+</body>
+</html>

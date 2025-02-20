@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <link rel="stylesheet" href="/static/css/styleresult.css">
+</head>
+<body>
+    <h1>Hasil Prediksi</h1>
+
+    <!-- Data Pasien -->
+    <div>
+        <h2>Data Pasien:</h2>
+        <p><strong>Nama:</strong> {{ patient.name }}</p>
+        <p><strong>Umur:</strong> {{ patient.age }}</p>
+        <p><strong>Jenis Kelamin:</strong> {{ patient.gender }}</p>
+        <p><strong>Kontak:</strong> {{ patient.contact }}</p>
+        <p><strong>Alamat:</strong> {{ patient.address }}</p>
+    </div>
+
+    <!-- Gambar yang Diunggah -->
+    <div>
+        <h2>Gambar yang Diupload:</h2>
+        <img src="{{ url_for('static', filename='images/' + filename) }}" alt="Uploaded Image" style="max-width: 500px;">
+    </div>
+
+    <!-- Hasil Prediksi -->
+    <div>
+        <h2>Prediksi Penyakit:</h2>
+        <p><strong>Kategori:</strong> {{ predicted_class }}</p>
+        <p><strong>Probabilitas:</strong> {{ (predicted_prob * 100) | round(2) }}%</p>
+    </div>
+
+    <!-- Penjelasan Penyakit -->
+    <div>
+        <h2>Penjelasan Penyakit:</h2>
+        <p>{{ disease_description }}</p>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div>
+        <button onclick="window.print()">Cetak Hasil</button>
+        <button>
+            <a href="{{ url_for('detect') }}">
+                Kembali ke Prediksi
+            </a>
+        </button>
+    </div>
+    <footer>
+        <p>&copy; 2025 Sistem Prediksi Penyakit. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Penyakit</title>
+    <link rel="stylesheet" href="/static/css/styledetect.css">
+</head>
+<body>
+    <h1>Sistem Deteksi Klasifikasi Penyakit Gastrointestinal</h1>
+    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+        <h3>Data Pasien</h3>
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="age">Umur:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="gender">Jenis Kelamin:</label>
+        <select id="gender" name="gender" required>
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select>
+        
+        <label for="contact">Kontak:</label>
+        <input type="text" id="contact" name="contact" required>
+        
+        <label for="address">Alamat:</label>
+        <textarea id="address" name="address"></textarea>
+    
+        <h3>Unggah Gambar</h3>
+        <label for="file">Pilih Gambar:</label>
+        <input type="file" id="file" name="file" accept="image/*" required>
+        
+        <label for="model">Pilih Model:</label>
+        <select id="model" name="model">
+            <option value="model1">ConvMixer</option>
+            <option value="model2">ResNet</option>
+        </select><br>
+        
+        <button type="submit">Prediksi</button>
+    </form>
+    <a href="{{ url_for('index') }}#predict">
+        Kembali ke Dashboard
+    </a>
+    <footer>
+        <p>&copy; 2025 Sistem Prediksi Penyakit. All rights reserved.</p>
+    </footer>
+</body>
+</html>

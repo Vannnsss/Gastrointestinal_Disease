@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IVAN SEPTA | | GASTROENTOLOGY</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css"
+        integrity="sha512-DbP1b6q56Ud5q0L+lvw9COyyH/+pN1lVmySvun4UsH8vmfdIHou+PAHfMnGXf6Fvd9rYLjSojeuPhQz2euU1cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+    <!-- icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="{{ url_for('index') }}" class="navbar-logo">G a s t r o e n t r o l o g y</a>
+        <div class="navbar-nav">
+            <a href="{{ url_for('detect') }}">Prediksi</a>
+            <a href="{{ url_for('history') }}">Riwayat Prediksi</a>
+            <a href="{{ url_for('about') }}">Tentang Aplikasi</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <div class="navbar-extra">
+            <a href="#" class="ham" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </header>
+    <!-- Akhir Navbar -->
+
+    <!-- span left -->
+    <nav>
+        <div id="fp-nav" class="left">
+            <ul>
+                <li>
+                    <a href="{{ url_for('detect') }}">
+                        <div></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('history') }}">
+                        <div></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">
+                        <div></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('logout') }}">
+                        <div></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- span end -->
+    <div id="fullpage">
+        <div class="section s1" data-anchor="home">
+            <section>
+                <div class="containe">
+                    <div class="content">
+                        <h1>
+                            Gastrointestinal <br />
+                            Disease
+                        </h1>
+                        <div class="border">
+                            <span> </span>
+                            <span> </span>
+                        </div>
+                        <p> A website for detecting gastrointestinal disorders</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- End Hero Section -->
+
+        <!-- About Section -->
+
+        <div class="section s2" data-anchor="predict">
+            <section>
+                <div class="container">
+                    <div class="tittle">
+                        <h1>Predict <span>Now</span></h1>
+                        <div class="border">
+                            <span> </span>
+                            <span> </span>
+                        </div>
+                        <p>Unggah Gambar Anda <a href="{{ url_for('detect') }}">Sekarang</a>|| Pastikan format gambar berupa jpg.</p>
+                    </div>
+
+                    <div class="img">
+                        <img src="/static/src_images/predict.jpg" alt="GASTROENTOLOGY" width="970px" height="590px" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="section s4" data-anchor="history">
+            <section>
+                <div class="container4">
+                    <div class="tittle">
+                        <h1> Predict <span>History</span></h1>
+                        <div class="border">
+                            <span> </span>
+                            <span> </span>
+                        </div>
+                        <p>Klik <a href="{{ url_for('history') }}">Sekarang </a> untuk melihat history prediksi <br>
+                        penyakit gastrointestinal</p>
+                    </div>
+                    <div class="img">
+                        <img src="/static/src_images/preed.jpg" alt="Artificial Intelligence" width="970px" height="610px" />
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End Contact -->
+        <div class="section s5" data-anchor="about">
+            <section>
+                <div class="container3">
+                    <div class="tittle">
+                        <h1> About </h1>
+                        <div class="border">
+                            <span> </span>
+                            <span> </span>
+                        </div>
+                        <p>Ketahui lebih dalam <a href="{{ url_for('about') }}">Sekarang </a>tentang aplikasi ini 
+                            <br> dan bagaimana kami membantu mendeteksi <br>penyakit gastrointestinal dengan teknologi canggih. </p>
+                    </div>
+                    <div class="img">
+                        <img src="/static/src_images/web.png" alt="Artificial Intelligence" width="970px" height="610px" />
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- up scroll -->
+
+    <!-- JS -->
+    <script src="/static/js/activePage.js"></script>
+    <script defer src="/static/js/script.js"></script>
+    <script>
+    feather.replace();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js"
+        integrity="sha512-GS3CSFQ4aj+0fL2a0wV1ouvpdbTZ3eEUriXTpXt50dc0CkO1fgyWuLoPA5NWy1PAWmcaZNneM+OAThgCqPnX+g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+    new fullpage("#fullpage", {
+        autoScrolling: true,
+        anchor: ["home", "predict", "knowledge", "first_aid", "history","about"],
+    });
+    </script>
+    <!-- JS end -->
+</body>
+
+</html>
